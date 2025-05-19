@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Ingredientes Nutreo</title>
-  <link rel="stylesheet" href="./styles/main.css" />
-</head>
-<body>
-  <h2>Ingredientes y sus principales cualidades: </h2>
-  <div id="output" class="section"></div>
 
-  <!-- SheetJS -->
-  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-  <script src="./scripts/app.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Ingredientes Nutreo</title>
+
+    <link rel="icon" href="https://nutreo.co/wp-content/uploads/2024/08/cropped-favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://nutreo.co/wp-content/uploads/2024/08/cropped-favicon-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://nutreo.co/wp-content/uploads/2024/08/cropped-favicon-180x180.png">
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Presentación de ingredientes y sus caracteristicas, pasantía Nutreo">
+    <meta name="author" content="Laura Sofía Cruz, Cesar Cardozo">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/b5077ad514.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./styles/main_test.css" />
+    <link rel="stylesheet" href="./styles/fonts_test.css" />
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="navbar-logo-nutreo">
+            <a href="https://nutreo.co/es/">
+                <img width="136" 
+                    height="31" 
+                    src="https://nutreo.co/wp-content/uploads/2024/07/logo_nutreo_naranja.svg"
+                    alt="">
+            </a>
+        </div>
+        <div class="nav-bar-search-group">
+            <input type="text" id="filterName" maxlength="10" placeholder="Filtrar" name="filterName" autocomplete="off"/>
+            <button alt="filtrar" onclick="filterByName()"><span><i class="fas fa-search"></i></span></button>
+            <button alt="limpiar" onclick="cleanFilters()"><span><i class="fas fa-sync-alt"></i></span></button>
+        </div>
+    </nav>
+
+
+    <div id="output" class="section"></div>
+
+    <div id="alert-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="./scripts/testEXCEL.js"></script>
 </body>
+
 </html>

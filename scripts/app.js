@@ -1,8 +1,8 @@
 
-const excelFilePath = '../assets/data.xlsx';
+const excelFilePath = 'data_test.xlsx';
 let allDataBK = {}
 
-const processListByChar = function(line, splitChar){
+const processListByChar = function (line, splitChar) {
     const cleanLine = line.split(splitChar).filter(item => item.trim() !== '')
     let cleanedDiv = '<div><ul>'
 
@@ -16,9 +16,12 @@ const processListByChar = function(line, splitChar){
     return cleanedDiv
 }
 
-const renderEXCEL = async function(allJSONData){
+const renderEXCEL = async function (allJSONData) {
 
     const outputDiv = document.getElementById('output');
+
+    outputDiv.innerHTML = '';
+
     allJSONData.forEach(row => {
         const nombre_ing = row["INGREDIENTE"] || '';
         const compuestos_ing = row["COMPUESTOS ACTIVOS"] || '';
@@ -50,55 +53,55 @@ const renderEXCEL = async function(allJSONData){
         section.innerHTML = `
             <div class="card">
                 <div class="card-header">
-                    <h1>${nombre_ing} <span></span></h1>
+                    <h1 class="work-sans-bold">${nombre_ing}<span></span></h1>
                 </div>
-                <div class="card-body">
-                    <div class="${compuestos_ing.trim() == ''? "hidden":"display"}">
+                <div class="card-body work-sans-regular">
+                    <div class="${compuestos_ing.trim() == '' ? "hidden" : "display"}">
                         <h4>COMPUESTOS ACTIVOS:</h4> 
                         <span>${compuestos_ing}</span>
                     </div>
-                    <div class="${biodisponibilidad_ing.trim() == ''? "hidden":"display"}">
+                    <div class="${biodisponibilidad_ing.trim() == '' ? "hidden" : "display"}">
                         <h4>BIODISPONIBILIDAD:</h4>
                         <span>${clean_bio}</span>
-                        <div class="${bio_factor_ing.trim() == ''? "hidden":"display"}">
+                        <div class="${bio_factor_ing.trim() == '' ? "hidden" : "display"}">
                             <h4>FACTORES DE BIODISPONIBILIDAD:</h4> 
                             <span>${clean_bio_fact}</span>
                         </div>
                     </div>
-                    <div class="${literatura_ing.trim() == ''? "hidden":"display"}">
+                    <div class="${literatura_ing.trim() == '' ? "hidden" : "display"}">
                         <h4>QUE DICE LA LITERATURA:</h4>
                         <span>${clean_lit}</span>
                     </div>
-                    <div class="${tipos_fuentes_ing.trim() == ''? "hidden":"display"}">
+                    <div class="${tipos_fuentes_ing.trim() == '' ? "hidden" : "display"}">
                         <h4>TIPOS DE FUENTES:</h4>
                         <span>${clean_font} </span>
                     </div>
-                    <div class="${matrices_ing.trim() == ''? "hidden":"display"}">
+                    <div class="${matrices_ing.trim() == '' ? "hidden" : "display"}">
                         <h4>TIPO DE ALIMENTOS O MATRICES:</h4>
                         <span>${clean_mat} </span>
                     </div>
-                    <div class="${formas_ing.trim() == ''? "hidden":"display"} sub-card">
+                    <div class="${formas_ing.trim() == '' ? "hidden" : "display"} sub-card">
                         <h4>FORMAS:</h4>
                         <span>${clean_form} </span>
-                        <div class="${most_used_ing.trim() == ''? "hidden":"display"} sub-card-section">
+                        <div class="${most_used_ing.trim() == '' ? "hidden" : "display"} sub-card-section">
                             <h5>LAS MÁS USADAS EN GENERAL:</h4> 
                             <span>${clean_most} </span>
                         </div>
-                        <div class="${used_feed_ing.trim() == ''? "hidden":"display"} sub-card-section">
+                        <div class="${used_feed_ing.trim() == '' ? "hidden" : "display"} sub-card-section">
                             <h5>LAS MÁS USADAS EN ALIMENTOS:</h4> 
                             <span>${clean_used_food} </span>
                         </div>
                     </div>
-                    <div class="${dosis_ing.trim() == ''? "hidden":"display"}">
+                    <div class="${dosis_ing.trim() == '' ? "hidden" : "display"}">
                         <h4>DOSIS:</h4> 
                         <span>${clean_dosis} </span>
                     </div>
-                    <div class="${ul_ing.trim() == ''? "hidden":"display"}">
+                    <div class="${ul_ing.trim() == '' ? "hidden" : "display"}">
                         <h4>UL:</h4>
                         <span>${clean_ul} </span>
                     </div>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer work-sans-ligth">
                     <p>${clean_ref}</p>
                 </div>
             </div>
@@ -107,7 +110,7 @@ const renderEXCEL = async function(allJSONData){
     });
 }
 
-const preProcessSheets = function(excelWorkbook) {
+const preProcessSheets = function (excelWorkbook) {
     let finalJSON = []
     excelWorkbook.SheetNames.forEach(hoja => {
         const miniJSON = XLSX.utils.sheet_to_json(excelWorkbook.Sheets[hoja]);
@@ -115,6 +118,45 @@ const preProcessSheets = function(excelWorkbook) {
     })
     return finalJSON;
 }
+
+const filterByName = function () {
+    const input = document.getElementById('filterName')
+    const name = input.value.toUpperCase()
+
+    if (name.length < 3){
+        mostrarAlerta("Por favor digita más de 3 caracteres para realizar el filtrado.");
+    }else {
+        const newJSON = allDataBK.filter(ing => ing.INGREDIENTE.includes(name));
+
+        if(newJSON.length === 0){
+            mostrarAlerta("No se encontraron resultados.");
+        } else {
+            renderEXCEL(newJSON);
+        }
+    }
+}
+
+const cleanFilters = function() {
+    renderEXCEL(allDataBK);
+}
+
+const mostrarAlerta = function(mensaje) {
+    const container = document.getElementById('alert-container');
+    const alerta = document.createElement('div');
+    alerta.className = 'alert';
+    alerta.textContent = mensaje;
+
+    container.appendChild(alerta);
+
+    setTimeout(() => {
+        alerta.classList.add('fade-out');
+    }, 9000);
+
+    setTimeout(() => {
+        alerta.remove();
+    }, 10000);
+}
+
 
 fetch(excelFilePath)
     .then(response => response.arrayBuffer())

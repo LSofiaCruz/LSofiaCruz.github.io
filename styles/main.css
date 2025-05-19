@@ -1,5 +1,48 @@
+
+/* ::::::::::::: PALETA DE COLORES ::::::::::::: */
+
+:root {
+    --primary-nutreo: #FF670A;
+    --secondary-nutreo: #FFF6EC;
+    --alternate-nutreo: #FF4D00;
+    --carbon-36-nutreo: #363636;
+    --carbon-80-nutreo: #808080;
+    --alerta-popup: #2196f3;
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::: */
+
+
 h1 {
     margin: 0px;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--carbon-36-nutreo);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+#output {
+    padding-top: 80px;
+}
+
+#navbar > .nav-bar-search-group {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    height: 32px;
+    width: 200px;
+}
+
+.nav-bar-search-group > #filterName {
+    width: 180px;
+    color: var(--carbon-80-nutreo);
 }
 
 .hidden {
@@ -12,27 +55,29 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-logo-nutreo {
+    margin: 24px;
 }
 
 .card {
-    background-color: #f0f8ff;
+    background-color: var(--secondary-nutreo);
     border-radius: 15px;
-    border: 2px solid black;
-    max-width: 70%;
+    width: 800px;
     margin: auto;
+    color: var(--carbon-36-nutreo)
 }
 
 .card-header {
-    background-color: #8a85e8;
+    background-color: var(--primary-nutreo);
     color: white;
     font-size: large;
     font-weight: 500;
     padding: 32px;
     display: flex;
     justify-content: center;
-    border-radius: 15px 15px 0px 0px;
-    border-bottom: 2px solid black;
+    border-radius: 12px 12px 0px 0px;
 }
 
 .card-body {
@@ -41,19 +86,18 @@ h1 {
 
 .sub-card {
     background-color: white;
-    border-radius: 10px;
+    border-left: 4px solid var(--alternate-nutreo);
     padding: 16px 32px;
 }
 
 .sub-card-section {
-    border-top: 1px dotted gray;
+    border-top: 1px dotted var(--carbon-80-nutreo);
 }
-
 
 .card-footer {
     font-size: 10px;
-    color: #9988AA;
-    border-top: 2px dashed black;
+    color: var(var(--carbon-36-nutreo));
+    border-top: 1px dashed black;
     padding: 16px;
 }
 
@@ -65,3 +109,30 @@ h1 {
     list-style-type: none;
     margin: 16px 8px;
 }
+
+  #alert-container {
+    position: fixed;
+    top: 80px;
+    left: 80px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .alert {
+    background-color: var(--alerta-popup);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    max-width: 300px;
+    font-family: sans-serif;
+  }
+
+  .alert.fade-out {
+    opacity: 0;
+  }
+  
