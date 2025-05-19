@@ -1,5 +1,5 @@
 
-const excelFilePath = 'data_test.xlsx';
+const excelFilePath = '../assets/data.xlsx';
 let allDataBK = {}
 
 const processListByChar = function (line, splitChar) {
