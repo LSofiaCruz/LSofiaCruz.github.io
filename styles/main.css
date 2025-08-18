@@ -1,10 +1,5 @@
 @import url('./palette.css');
 
-.flex-wrapper {
-  display: flex;
-  align-items: center;
-}
-
 section {
   background-color: rgba(255, 255, 255, 0.75);
 }
@@ -13,6 +8,50 @@ header {
   background: var(--kiwi-skin);
   padding: 1rem;
   margin-bottom: 20px;
+}
+
+footer {
+  background-color: var(--kiwi-skin);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+footer a {
+  color: var(--primary);
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+footer .social-icons a i {
+  font-size: 1.2rem;
+  color: white;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+footer .social-icons a:hover i {
+  color: var(--primary);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.flex-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .wave {
@@ -34,21 +73,6 @@ header {
 
 .wave path {
   fill: var(--kiwi-skin); /* mismo color del header */
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 .section {
@@ -96,6 +120,10 @@ nav a {
   border-left: 4px solid #9b6116;
 }
 
+.border-left-orange {
+  border-left: 4px solid #fcb104;
+}
+
 .card-tittle {
   display: flex;
   justify-content: space-between;
@@ -104,30 +132,6 @@ nav a {
 .skills {
   color: #a0a0a0;
   font-size: 12px;
-}
-
-footer {
-  background-color: var(--kiwi-skin);
-  color: white;
-  text-align: center;
-  padding: 2rem;
-}
-
-footer a {
-  color: var(--primary);
-  margin: 0 0.5rem;
-  text-decoration: none;
-}
-
-footer .social-icons a i {
-  font-size: 1.2rem;
-  color: white;
-  margin: 0 0.5rem;
-  transition: color 0.3s;
-}
-
-footer .social-icons a:hover i {
-  color: var(--primary);
 }
 
 .stack-grid {
@@ -203,7 +207,6 @@ footer .social-icons a:hover i {
   border-radius: 50%;
   position: absolute;
 }
-
 
 .kiwi-background {  margin: 0;
   background: 
