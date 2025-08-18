@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Portafolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/b5077ad514.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/fonts.css" />
+
+</head>
+
+<body class="kiwi-background">
+
+  <header>
+    <nav>
+      <ul>
+        <li><a class="work-sans-bold" href="#inicio">Inicio</a></li>
+        <li><a class="work-sans-bold" href="#stack">Stack Técnico</a></li>
+        <li><a class="work-sans-bold" href="#experiencia">Experiencia</a></li>
+        <li><a class="work-sans-bold" href="#proyectos">Proyectos</a></li>
+      </ul>
+    </nav>
+    <div class="wave">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+        <path d="M0,50 C150,150 350,0 500,100 L500,0 L0,0 Z"></path>
+      </svg>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="section">
+      <div class="flex-wrapper">
+        <div>
+          <h1 class="work-sans-bold">Laura Sofía Cruz Martínez</h1>
+          <p class="work-sans-regular">Nutricionista Dietista | Resolutiva | Entusiasta</p>
+          <p class="work-sans-ligth">
+            Nutricionista Dietista egresada de la Universidad CES, con interés y experiencia en investigación en
+            ciencias
+            básicas y aplicadas a la nutrición.
+            Cuento con más de cuatro años de experiencia como monitora de Bioquímica Nutricional, desarrollando
+            habilidades en docencia,
+            acompañamiento académico y formación de estudiantes. He participado durante poco más de un año y medio en el
+            grupo de investigación en Exposoma,
+            en donde he colaborado en artículos científicos que se encuentran en curso.
+          </p>
+        </div>
+        <div>
+          <img src="./assets/NutriaKiwi.png" style="max-width: 200px">
+        </div>
+
+      </div>
+    </section>
+
+    <section id="stack" class="section">
+      <h2 class="work-sans-bold">Skills</h2>
+      <div id="stack-contenedor" class="stack-grid"></div>
+    </section>
+
+
+    <section id="experiencia" class="section">
+      <h2 class="work-sans-bold">Experiencia Laboral</h2>
+      <div id="experiencia-contenedor" class="job-wrapper"></div>
+    </section>
+
+    <section id="proyectos" class="section">
+      <h2 class="work-sans-bold">Proyectos Destacados</h2>
+      <div class="proyecto">
+        <h3 class="work-sans-regular">Catálogo de Ingredientes Nutreo</h3>
+        <p class="work-sans-ligth">SPA para cargar los datos de los nutrientes usados como ingredientes en diversas
+          formulas compilados en el Excel propiedad de Laura Sofía Cruz (Practicante de nutreo)</p>
+        <a class="work-sans-regular" href="https://lsofiacruz.github.io/nutrientes.html" target="_blank">Ver
+          proyecto</a>
+        <span class="work-sans-regular">•</span>
+        <a class="work-sans-regular" href="https://github.com/LSofiaCruz/LSofiaCruz.github.io" target="_blank">Ver en
+          GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="work-sans-bold">Contacto: <a class="work-sans-regular"
+        href="mailto:cesar.cardozo.ud@gmail.com">laura.sofia.cruz.l@gmail.com</a></p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/laura-sofia-cruz-martinez-nutricion/" target="_blank"><i
+          class="fab fa-linkedin"></i></a>
+    </div>
+    <p class="work-sans-regular">&copy; 2025 Laura Sofía Cruz Martínez</p>
+  </footer>
+
+  <script type="module" src="./scripts/main.js"></script>
+  <script type="module" src="./scripts/stack.js"></script>
+</body>
+
+</html>

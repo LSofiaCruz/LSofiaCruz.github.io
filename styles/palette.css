@@ -1,0 +1,17 @@
+/* ::::::::::::::::::::: PALETA DE COLOR :::::::::::::::::::::*/
+:root {
+    /* Verdes kiwi */
+    --kiwi-green: #86b754;
+    --kiwi-core: #e0f6ca;
+    --kiwi-skin: #7a5e3c;
+    --kiwi-seed: #2e2e2e;
+  
+    --background: #f4f4f4;
+    --text: #1a1a1a;
+    --primary: #4a90e2;
+    --dark: #1a1a1a;
+    --front-background: #c4ffff;
+    --back-background: #c4c4ff;
+    --carbon-80: #808080;
+  }
+  /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
