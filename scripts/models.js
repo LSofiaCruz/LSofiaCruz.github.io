@@ -2,11 +2,11 @@ export const jobs = {
     "carrera": [
 
         {
-            "empresa": "Universidad CES & Imperial College",
+            "empresa": "Imperial College",
             "cargo": "Investigadora Principal",
             "fecha_inicio": "Ene, 2021",
             "fecha_fin": "Ago, 2025",
-            "descripcion": "Grupo de Investigación Exposoma.",
+            "descripcion": "Grupo de Investigación (Exposoma y mecanismos biológicos de las enfermedade).",
             "color": "blue",
             "habilidades": "I+D, Ciencias Básicas"
         },
@@ -21,7 +21,7 @@ export const jobs = {
         },
         {
             "empresa": "Fundación los Alamos",
-            "cargo": "Practicante universitaria",
+            "cargo": "Nutricionista",
             "fecha_inicio": "Jul, 2025",
             "fecha_fin": "Ago, 2025",
             "descripcion": "Asesoramiento nutricional y dietetico para los pacientes de la fundación.",
@@ -30,12 +30,20 @@ export const jobs = {
         },
         {
             "empresa": "Nutreo",
-            "cargo": "Practicante universitaria en diseño y desarrollo de productos",
+            "cargo": "Diseño y desarrollo de productos",
             "fecha_inicio": "Ene, 2025",
             "fecha_fin": "Ago, 2025",
             "descripcion": "Propuesta e investigación de productos en polvo para venta como materia prima. Asesoramiento nutricional de comerciales para venta de productos. Panel sensorial.",
             "color": "orange",
             "habilidades": "I+D, Alimentación y Bebidas"
+        },{
+            "empresa": "IPS CES Sabaneta",
+            "cargo": "Nutricionista en Consulta Externa",
+            "fecha_inicio": "Oct, 2025",
+            "fecha_fin": "Nov, 2025",
+            "descripcion": "Me desempeñé como nutricionista en consulta externa en la IPS CES de sabaneta y el gimnasio CAPF del poblado.",
+            "color": "orange",
+            "habilidades": "Antropometría, promoción y prevención de enfermedades crónicas"
         }
     ]
 }
